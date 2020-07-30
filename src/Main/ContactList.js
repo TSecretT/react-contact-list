@@ -16,6 +16,21 @@ const ContactList = ({ onAddNewClick }) => {
       dataIndex: "phone",
       key: "phone",
     },
+    {
+      title: "Birthday",
+      dataIndex: "birthday",
+      key: "birthday",
+    },
+    {
+      title: "Gender",
+      dataIndex: "gender",
+      key: "gender",
+    },
+    {
+      title: "Emergency",
+      dataIndex: "isEmergency",
+      key: "isEmergency",
+    },
   ];
 
   return (
