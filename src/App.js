@@ -11,6 +11,10 @@ function App() {
     setContacts(contacts.concat(contact));
   };
 
+  const delContact = (contact) => {
+    
+  }
+
   const contextValue = { contacts, addNewContact };
 
   return (

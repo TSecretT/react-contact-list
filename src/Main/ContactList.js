@@ -5,6 +5,10 @@ import Context from "./Context";
 const ContactList = ({ onAddNewClick }) => {
   const { contacts } = React.useContext(Context);
 
+  const onDelete = (name) => {
+    contacts = contacts.map(contact => {if(contact.name !== name) return contact});
+  }
+
   const columns = [
     {
       title: "Name",
@@ -30,6 +34,16 @@ const ContactList = ({ onAddNewClick }) => {
       title: "Emergency",
       dataIndex: "isEmergency",
       key: "isEmergency",
+    },
+    {
+      title: 'Action',
+      key: 'action',
+      render: (text, record) => (
+        <Space size="middle">
+          <a>Update</a>
+          <a onClick={() => onDelete(record.name)}>Delete</a>
+        </Space>
+      ),
     },
   ];
 
